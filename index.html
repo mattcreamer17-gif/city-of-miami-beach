@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A read on where AI fits in Miami Beach's stack, and where it does not</title>
+<meta name="description" content="Your FY2026 IT book puts an integrated customer-service dashboard at the top of the list, alongside a building-department digital push. My read is that the real work sits a layer below the dashboard, in deciding which data gets an LLM summary and which stays raw. Want the 60/30/10 version of that?">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="https://www.miamibeachfl.gov/" target="_blank" rel="noopener" class="logo-link" aria-label="City of Miami Beach">
+      <img src="logo.svg" alt="City of Miami Beach" class="logo">
+    </a>
+    <div class="meta-strip">
+      <span class="meta-label">Prepared for</span>
+      <span class="meta-value">Office of the CIO</span>
+    </div>
+  </div>
+  <div class="accent-bar" aria-hidden="true"></div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Briefing prepared for eMerge Americas 2026</p>
+      <h1>A read on where AI fits in Miami Beach's stack, and where it does not.</h1>
+      <p class="deck">Your FY2026 IT book puts an integrated customer-service dashboard at the top of the list, alongside a building-department digital push. The real work sits a layer below the dashboard. Deciding which data gets an LLM summary and which stays raw.</p>
+      <div class="hero-meta">
+        <div class="meta-block">
+          <span class="meta-block-label">Prepared for</span>
+          <span class="meta-block-value">Frank Quintana, CIO</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-block-label">Subject</span>
+          <span class="meta-block-value">FY2026 IT priorities</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-block-label">Engagement scope</span>
+          <span class="meta-block-value">Audit, methodology, training</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-number">01</span>
+      <h2>The stack, as it reads from the outside</h2>
+    </div>
+
+    <p class="lede">Miami Beach runs a mid-size city on a barrier island with a 24/7 resort economy on top of it. The FY2026 IT posture names a short list: the integrated customer-service dashboard, the building-department digital push, the cross-department data layer, surveillance analytics with MBPD, and cyber resilience. The city is also 15 percent into a ten-year, $600 million stormwater and sea-level-rise program that FEMA now points to as a national model. That program pulls a lot of documents. Every Resilient Florida dollar comes with a reporting cycle.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-number">$600M+</span>
+        <span class="stat-label">Stormwater and sea-level-rise capital program</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">$79M+</span>
+        <span class="stat-label">Resilient Florida grant funding received to date</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">14,692</span>
+        <span class="stat-label">Building applications in a recent reporting window</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5.4M</span>
+        <span class="stat-label">Overnight visitors, FY2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="body-section alt">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-number">02</span>
+      <h2>The working view: 60, 30, 10</h2>
+    </div>
+
+    <p>The view we work from: most problems inside a city stack are not AI problems. The job is to figure out which piece of the customer-service dashboard, the permitting workflow, or the grant package sits in which bucket, and to build only what belongs in the top 10. Everything else runs faster and cheaper in Postgres.</p>
+
+    <div class="split-grid">
+      <div class="split-card">
+        <span class="split-percent">60%</span>
+        <h3>Traditional code and database work</h3>
+        <p>The backbone of a customer-service dashboard is plumbing. Schema design, ETL, ArcGIS layers, indexed lookups. This does not need a model in the loop.</p>
+      </div>
+      <div class="split-card">
+        <span class="split-percent">30%</span>
+        <h3>Rule-based logic</h3>
+        <p>Permitting routing, code-enforcement triage, grant-compliance checklists. A well-written Python script and a good schema already handle this without a call to an API.</p>
+      </div>
+      <div class="split-card highlight">
+        <span class="split-percent">10%</span>
+        <h3>Genuine AI work</h3>
+        <p>Cross-system summarization. Grant narrative assembly. Resident-facing status phrasing. This is the layer where an LLM earns its seat.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-number">03</span>
+      <h2>Precedent: the shape of the climate-grant reporting problem</h2>
+    </div>
+
+    <div class="precedent-grid">
+      <div class="precedent-copy">
+        <p>We did this work at a mining-compliance company called Armetour. The team was burning 160-plus hours on a single compliance cycle. We built a multi-agent document layer on top of the systems they already ran. The same cycle now closes in under five minutes, with the human review intact.</p>
+        <p>The shape of Miami Beach's climate-grant reporting is the same shape. Structured inputs, regulated outputs, recurring cycle, real consequences for getting it wrong. We would expect the time compression to be closer to 10x than 30x on day one, and to improve as the document set stabilizes.</p>
+      </div>
+      <aside class="pullbox">
+        <span class="pullbox-eyebrow">Armetour, compliance cycle</span>
+        <p class="pullbox-from">160+ hours</p>
+        <p class="pullbox-arrow">to</p>
+        <p class="pullbox-to">under 5 minutes</p>
+        <p class="pullbox-note">Human review intact. System of record untouched.</p>
+      </aside>
+    </div>
+
+  </div>
+</section>
+
+<section class="body-section alt">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-number">04</span>
+      <h2>Methodology a Commissioner can read</h2>
+    </div>
+
+    <p>The methodology is public. Interpretable Context Methodology, submitted to ACM TiiS. Every output is readable by a Commissioner without a briefing. When Frank has to explain why a system made the call it made, the explanation is already in the folder.</p>
+
+    <div class="link-row">
+      <a class="linkcard" href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">
+        <span class="linkcard-label">Paper and repo</span>
+        <span class="linkcard-title">Interpretable Context Methodology</span>
+        <span class="linkcard-url">github.com/RinDig/Interpretable-Context-Methodology-ICM-</span>
+      </a>
+      <a class="linkcard" href="https://arxiv.org/abs/2510.11742" target="_blank" rel="noopener">
+        <span class="linkcard-label">Governance companion</span>
+        <span class="linkcard-title">Ethics Engine</span>
+        <span class="linkcard-url">arxiv.org/abs/2510.11742</span>
+      </a>
+    </div>
+    <p class="smallprint">Ethics Engine is a psychometric assessment tool for evaluating ideological and moral patterns in LLMs. Companion repo: <a href="https://github.com/RinDig/AuditEngine" target="_blank" rel="noopener">github.com/RinDig/AuditEngine</a>.</p>
+
+  </div>
+</section>
+
+<section class="body-section">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-number">05</span>
+      <h2>Where the partner layer sits</h2>
+    </div>
+
+    <p>Eduba partners with <a href="https://nlplogix.com" target="_blank" rel="noopener">NLP Logix</a> for work that sits below the orchestration layer. NLP Logix has been in machine learning since 2011 and runs over 150 data scientists. If a customer-service dashboard needs a real warehouse underneath it, or if surveillance analytics with MBPD grows beyond vendor-supplied analytics, that work routes through NLP Logix under the existing partnership.</p>
+
+    <p>The case studies Eduba leans on for this kind of work: 1,500+ people trained at Pacific Life and Colgate-Palmolive since May 2025, 6,000 to 9,000 hours saved per year, 95 percent still using the tools 30 days after the workshop. KPMG UK, one of the Big Four, 40+ executives trained. The Mayor's innovation-hub framing and the city's eMerge presence sit inside that same regulated, leadership-audience lane.</p>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-copy">
+        <span class="cta-eyebrow">Next step</span>
+        <h2>30 minutes with Matt.</h2>
+        <p>Bring the one resident-facing process inside the city that eats the most staff hours. We walk back up the stack from there and show you which layer each piece belongs on.</p>
+      </div>
+      <div class="cta-action">
+        <a class="btn" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">Book the 30 minutes</a>
+        <div class="cta-person">
+          <span class="cta-person-name">Matt Creamer</span>
+          <span class="cta-person-title">Chief Revenue Officer, Eduba</span>
+          <a class="cta-person-link" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">calendly.com/thecro-eduba/30min</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <p class="footer-title">This page is a briefing.</p>
+      <p class="footer-sub">Prepared ahead of the eMerge Americas 2026 conversation at the Miami Beach booth. Content drawn from the FY2026 IT department posture, the Resilient Florida grant register, and the city's own public dashboards.</p>
+    </div>
+    <div class="footer-col footer-eduba">
+      <p class="footer-prepared">Prepared by Eduba</p>
+      <a href="https://eduba.io" target="_blank" rel="noopener" class="footer-link">eduba.io</a>
+      <p class="footer-small">Veteran-owned. SAM-registered. Van Clief Media LLC.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
